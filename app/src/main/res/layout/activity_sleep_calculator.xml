@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Sueño"
+        android:textSize="24sp"
+        android:textColor="#4A90E2"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿A qué hora quieres despertar?"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:layout_marginBottom="16dp"/>
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular hora de dormir"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4A90E2"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deberías irte a dormir a las:"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22:30"
+        android:textSize="36sp"
+        android:textColor="#4A90E2"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consejos para un buen descanso"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:fontFamily="serif"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Mantén un horario regular de sueño\n2. Evita la cafeína antes de dormir\n3. Crea un ambiente relajante en tu dormitorio"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:fontFamily="sans-serif"/>
+
+</LinearLayout>

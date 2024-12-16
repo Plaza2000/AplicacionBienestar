@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meditación Guiada"
+            android:textSize="24sp"
+            android:textColor="#4A90E2"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elige tu tipo de meditación"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:fontFamily="serif"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Relajación"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#4A90E2"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enfoque"
+                android:textColor="#FFFFFF"
+                app:backgroundTint="#4A90E2"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duración"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:fontFamily="serif"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5 min"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10 min"
+                android:layout_weight="1"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 min"
+                android:layout_weight="1"/>
+        </RadioGroup>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Meditación"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#4A90E2"
+            android:layout_marginTop="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
