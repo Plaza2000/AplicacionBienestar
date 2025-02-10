@@ -12,15 +12,50 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DiseñoAplicacionBienestar"
         tools:targetApi="31">
+
+        <!-- Actividad principal -->
         <activity
-            android:name=".DashboardActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Meditación guiada -->
+        <activity
+            android:name=".MeditacionGuiadaActivity"
+            android:exported="true" />
+
+        <!-- Temporizador de meditación -->
+        <activity
+            android:name=".TemporizadorActivity"
+            android:exported="true" />
+
+        <!-- Registro de usuario -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+
+        <!-- Menú principal -->
+        <activity
+            android:name=".MenuActivity"
+            android:exported="true"/>
+
+        <!-- Calculadora del sueño -->
+        <activity
+            android:name=".CalculadoraSueno"
+            android:exported="true" />
+
+        <!-- Mood Tracker -->
+        <activity
+            android:name=".MoodTracker"
+            android:exported="true" />
+
+        <!-- Historial de estados de ánimo -->
+
+
     </application>
 
 </manifest>

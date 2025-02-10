@@ -13,6 +13,7 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/textMeditacionGuiada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Meditación Guiada"
@@ -22,6 +23,7 @@
             android:layout_marginBottom="24dp"/>
 
         <TextView
+            android:id="@+id/textEligeMeditacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Elige tu tipo de meditación"
@@ -31,12 +33,14 @@
             android:layout_marginBottom="16dp"/>
 
         <LinearLayout
+            android:id="@+id/layoutBotonesMeditacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="24dp">
 
             <Button
+                android:id="@+id/btnRelajacion"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -46,6 +50,7 @@
                 android:layout_marginEnd="8dp"/>
 
             <Button
+                android:id="@+id/btnEnfoque"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -56,6 +61,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/textDuracion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Duración"
@@ -65,24 +71,28 @@
             android:layout_marginBottom="16dp"/>
 
         <RadioGroup
+            android:id="@+id/radioGroupDuracion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginBottom="24dp">
 
             <RadioButton
+                android:id="@+id/rb5Min"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5 min"
                 android:layout_weight="1"/>
 
             <RadioButton
+                android:id="@+id/rb10Min"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10 min"
                 android:layout_weight="1"/>
 
             <RadioButton
+                android:id="@+id/rb15Min"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15 min"
@@ -90,6 +100,7 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/btnIniciarMeditacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Iniciar Meditación"

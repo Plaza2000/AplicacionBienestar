@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <!-- Título Bienestar -->
+    <TextView
+        android:id="@+id/tvBienestar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienestar"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Botón Meditación -->
+    <Button
+        android:id="@+id/btnMeditacion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Meditación"
+        app:layout_constraintTop_toBottomOf="@id/tvBienestar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Botón Estado de Ánimo -->
+    <Button
+        android:id="@+id/btnEstadoAnimo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Estado de Ánimo"
+        app:layout_constraintTop_toBottomOf="@id/btnMeditacion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón Calculadora del Sueño -->
+    <Button
+        android:id="@+id/btnCalculadoraSueno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Calculadora del Sueño"
+        app:layout_constraintTop_toBottomOf="@id/btnEstadoAnimo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Botón Logout -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintTop_toBottomOf="@id/btnCalculadoraSueno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

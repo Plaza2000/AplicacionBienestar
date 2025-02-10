@@ -26,18 +26,20 @@
         android:layout_marginBottom="16dp"/>
 
     <TimePicker
+        android:id="@+id/TimePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:timePickerMode="spinner"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        android:timePickerMode="spinner" />
 
     <Button
+        android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calcular hora de dormir"
-        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="#4A90E2"
-        android:layout_marginBottom="24dp"/>
+        android:text="Calcular hora de dormir"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,13 +51,14 @@
         android:layout_marginBottom="8dp"/>
 
     <TextView
+        android:id="@+id/textResultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="22:30"
-        android:textSize="36sp"
-        android:textColor="#4A90E2"
+        android:layout_marginBottom="24dp"
         android:fontFamily="sans-serif-medium"
-        android:layout_marginBottom="24dp"/>
+        android:text="22:30"
+        android:textColor="#4A90E2"
+        android:textSize="36sp" />
 
     <TextView
         android:layout_width="wrap_content"

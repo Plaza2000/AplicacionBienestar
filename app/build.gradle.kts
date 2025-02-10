@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.diseoaplicacionbienestar"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.diseoaplicacionbienestar"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
