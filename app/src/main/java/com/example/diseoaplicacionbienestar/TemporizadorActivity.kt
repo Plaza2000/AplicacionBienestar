@@ -67,9 +67,9 @@ class TemporizadorActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                // Cuando el temporizador termina
+
                 textView.text = "Meditación finalizada"
-                finish()  // Regresa a la actividad de meditación
+                finish()
             }
         }
         countdownTimer.start()

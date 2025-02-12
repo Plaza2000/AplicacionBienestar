@@ -40,7 +40,7 @@ class MeditacionGuiadaActivity : AppCompatActivity() {
 
         val btnVolverAlMenu = findViewById<Button>(R.id.btnVolver)
         btnVolverAlMenu.setOnClickListener {
-            finish()  // Regresa al menú
+            finish()
         }
     }
 }
