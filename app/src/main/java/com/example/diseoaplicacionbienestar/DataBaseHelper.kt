@@ -1,4 +1,5 @@
 package com.example.diseoaplicacionbienestar
+
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -19,7 +20,7 @@ class DatabaseHelper(context: Context) :
     override fun onCreate(db: SQLiteDatabase) {
         val createTableQuery = "CREATE TABLE $TABLE_USERS (" +
                 "$COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "$COLUMN_USERNAME TEXT, " +
+                "$COLUMN_USERNAME TEXT UNIQUE, " +
                 "$COLUMN_PASSWORD TEXT)"
         db.execSQL(createTableQuery)
     }
@@ -37,7 +38,7 @@ class DatabaseHelper(context: Context) :
         values.put(COLUMN_PASSWORD, password)
         val result = db.insert(TABLE_USERS, null, values)
         db.close()
-        return result != -1L // Devuelve true si se registró correctamente
+        return result != -1L
     }
 
     // Verificar si el usuario existe
@@ -49,5 +50,19 @@ class DatabaseHelper(context: Context) :
         cursor.close()
         db.close()
         return exists
+    }
+
+    // Obtener el ID del usuario
+    fun getUserId(username: String): Int {
+        val db = this.readableDatabase
+        val query = "SELECT $COLUMN_ID FROM $TABLE_USERS WHERE $COLUMN_USERNAME = ?"
+        val cursor = db.rawQuery(query, arrayOf(username))
+        var userId = -1
+        if (cursor.moveToFirst()) {
+            userId = cursor.getInt(0) // Obtener el ID
+        }
+        cursor.close()
+        db.close()
+        return userId
     }
 }

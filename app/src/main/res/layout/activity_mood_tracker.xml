@@ -88,4 +88,10 @@
         android:layout_height="wrap_content"
         android:background="#E0E0E0"/>
 
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver" />
+
 </LinearLayout>

@@ -24,6 +24,11 @@ class CalculadoraSueno : AppCompatActivity() {
         btnCalcular.setOnClickListener {
             calcularHoraDormir()
         }
+
+        val btnVolverAlMenu = findViewById<Button>(R.id.btnVolver)
+        btnVolverAlMenu.setOnClickListener {
+            finish()  // Esto cerrará la actividad de Meditación y regresará al menú
+        }
     }
 
     private fun calcularHoraDormir() {
@@ -34,9 +39,9 @@ class CalculadoraSueno : AppCompatActivity() {
         calendar.set(Calendar.MINUTE, minuto)
 
         val formatter = SimpleDateFormat("HH:mm", Locale.getDefault())
-        val hora7 = formatter.format(calendar.timeInMillis - 7 * 3600000)
+
         val hora8 = formatter.format(calendar.timeInMillis - 8 * 3600000)
 
-        textResultado.text = "$hora8 o $hora7"
+        textResultado.text = "$hora8"
     }
 }

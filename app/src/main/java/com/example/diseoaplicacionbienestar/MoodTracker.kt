@@ -1,29 +1,44 @@
 package com.example.diseoaplicacionbienestar
+
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.diseoaplicacionbienestar.MoodAdapter
-import com.example.diseoaplicacionbienestar.R
 import java.text.SimpleDateFormat
 import java.util.*
+import android.widget.Toast
+import com.example.diseoaplicacionbienestar.MoodAdapter
+import com.example.diseoaplicacionbienestar.R
 
 class MoodTracker: AppCompatActivity() {
-
-    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var adapter: MoodAdapter
     private lateinit var moodList: MutableList<String>
 
+    // Aquí inicializas sharedPreferences correctamente
+    private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mood_tracker)
 
-        sharedPreferences = getSharedPreferences("MoodPrefs", Context.MODE_PRIVATE)
+        // Obtener el nombre de usuario desde las preferencias globales
+        val globalSharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        val username = globalSharedPreferences.getString("username", null)
+
+        // Si no hay usuario logueado, no debe continuar
+        if (username == null) {
+            Toast.makeText(this, "Debes iniciar sesión", Toast.LENGTH_SHORT).show()
+            finish()
+            return
+        }
+
+        // Inicializas sharedPreferences para cada usuario
+        sharedPreferences = getSharedPreferences("${username}_MoodPrefs", Context.MODE_PRIVATE)
+
+        setContentView(R.layout.activity_mood_tracker)
 
         val btnHappy = findViewById<Button>(R.id.btnHappy)
         val btnNeutral = findViewById<Button>(R.id.btnNeutral)
@@ -62,6 +77,12 @@ class MoodTracker: AppCompatActivity() {
                 etNota.text.clear()
             }
         }
+
+        val btnVolverAlMenu = findViewById<Button>(R.id.btnVolver)
+        btnVolverAlMenu.setOnClickListener {
+            finish()  // Esto cerrará la actividad de Meditación y regresará al menú
+        }
+
     }
 
     private fun obtenerHistorial(): MutableList<String> {

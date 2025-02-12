@@ -2,6 +2,7 @@ package com.example.diseoaplicacionbienestar
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ class TemporizadorActivity : AppCompatActivity() {
     private lateinit var countdownTimer: CountDownTimer
     private var tiempoRestante: Long = 0
     private var duracion: Long = 0
+    private var isPaused = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,16 +25,35 @@ class TemporizadorActivity : AppCompatActivity() {
         val textTipo = findViewById<TextView>(R.id.textTipoMeditacion)
         val textTiempo = findViewById<TextView>(R.id.textTemporizador)
         val textDuracion = findViewById<TextView>(R.id.textDuracionMeditacion)
-        val btnCancelar = findViewById<Button>(R.id.btnPausar)
+        val btnPausar = findViewById<Button>(R.id.btnPausar)
+        val btnReanudar = findViewById<Button>(R.id.btnReanudar)
+        val btnTerminar = findViewById<Button>(R.id.btnTerminar)
 
         textTipo.text = "Meditación: $tipoMeditacion"
         textDuracion.text = "Duración: ${TimeUnit.MILLISECONDS.toMinutes(duracion)} min"
 
         iniciarTemporizador(textTiempo)
 
-        btnCancelar.setOnClickListener {
+        // Pausar el temporizador
+        btnPausar.setOnClickListener {
+            pausarTemporizador()
+            btnPausar.visibility = View.GONE
+            btnReanudar.visibility = View.VISIBLE
+            btnTerminar.visibility = View.VISIBLE
+        }
+
+        // Reanudar el temporizador
+        btnReanudar.setOnClickListener {
+            continuarTemporizador()
+            btnReanudar.visibility = View.GONE
+            btnTerminar.visibility = View.GONE
+            btnPausar.visibility = View.VISIBLE
+        }
+
+        // Terminar la meditación
+        btnTerminar.setOnClickListener {
             countdownTimer.cancel()
-            finish()
+            finish()  // Regresa a la actividad anterior
         }
     }
 
@@ -46,9 +67,21 @@ class TemporizadorActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+                // Cuando el temporizador termina
                 textView.text = "Meditación finalizada"
+                finish()  // Regresa a la actividad de meditación
             }
         }
         countdownTimer.start()
+        isPaused = false
+    }
+
+    private fun pausarTemporizador() {
+        countdownTimer.cancel()
+        isPaused = true
+    }
+
+    private fun continuarTemporizador() {
+        iniciarTemporizador(findViewById(R.id.textTemporizador))
     }
 }

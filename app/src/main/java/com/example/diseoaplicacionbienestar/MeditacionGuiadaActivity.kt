@@ -1,15 +1,10 @@
-
-
 package com.example.diseoaplicacionbienestar
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.View
-import android.widget.*
+import android.widget.Button
+import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.example.diseoaplicacionbienestar.R
-import com.example.diseoaplicacionbienestar.TemporizadorActivity
 
 class MeditacionGuiadaActivity : AppCompatActivity() {
     private lateinit var tipoMeditacion: String
@@ -41,6 +36,11 @@ class MeditacionGuiadaActivity : AppCompatActivity() {
             intent.putExtra("TIPO_MEDITACION", tipoMeditacion)
             intent.putExtra("DURACION", duracion)
             startActivity(intent)
+        }
+
+        val btnVolverAlMenu = findViewById<Button>(R.id.btnVolver)
+        btnVolverAlMenu.setOnClickListener {
+            finish()  // Regresa al menú
         }
     }
 }

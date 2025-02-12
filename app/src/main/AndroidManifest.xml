@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permisos necesarios -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -23,16 +28,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Meditación guiada -->
-        <activity
-            android:name=".MeditacionGuiadaActivity"
-            android:exported="true" />
-
-        <!-- Temporizador de meditación -->
-        <activity
-            android:name=".TemporizadorActivity"
-            android:exported="true" />
-
         <!-- Registro de usuario -->
         <activity
             android:name=".RegisterActivity"
@@ -43,19 +38,38 @@
             android:name=".MenuActivity"
             android:exported="true"/>
 
+        <!-- Meditación guiada -->
+        <activity
+            android:name=".MeditacionGuiadaActivity"
+            android:exported="false" />
+
+        <!-- Temporizador de meditación -->
+        <activity
+            android:name=".TemporizadorActivity"
+            android:exported="false" />
+
         <!-- Calculadora del sueño -->
         <activity
             android:name=".CalculadoraSueno"
-            android:exported="true" />
+            android:exported="false" />
 
         <!-- Mood Tracker -->
         <activity
             android:name=".MoodTracker"
-            android:exported="true" />
+            android:exported="false" />
 
-        <!-- Historial de estados de ánimo -->
 
+
+        <!-- Servicio para notificaciones -->
+        <receiver
+            android:name=".NotificacionReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
 
     </application>
-
 </manifest>

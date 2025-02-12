@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
 class MoodAdapter(private val moodList: List<String>) : RecyclerView.Adapter<MoodAdapter.MoodViewHolder>() {
 
     class MoodViewHolder(view: View) : RecyclerView.ViewHolder(view) {
